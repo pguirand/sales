@@ -1,0 +1,91 @@
+//1st Methood :
+
+// fetch('/posts/liste')
+// .then(response => response.json())
+// .then(data => {
+//     console.log(data);
+// })
+
+
+var pos = {};
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.position').forEach(button => {
+        button.onclick = () => {
+            pos = button.dataset.pos;
+            console.log(pos);
+            start();
+            //CreateListe();
+        }
+    })
+})
+
+// container2 = document.querySelector('#dp2');
+
+
+async function start() {
+    const response = await fetch('/posts/liste')
+    const data = await response.json()
+    let choix = data[pos];
+    if(pos ==='all') {
+        choix = data;
+    }
+    console.log(choix);
+    CreateListe(choix);
+    CreateDropdown(choix);
+
+}
+
+function CreateListe(liste) {
+    console.log(liste);
+    document.querySelector('#joueurs').innerHTML = '';
+    for (var letter in liste) // or 'of' with letter
+                                {
+        ul_list = document.querySelector('#joueurs');
+        nom_joueur = liste[letter];
+        var entry = document.createElement('li');
+        entry.appendChild(document.createTextNode(nom_joueur));
+        ul_list.appendChild(entry);
+    }
+}
+
+function CreateDropdown(dropliste) {
+    var mySelect = document.createElement('select');
+    mySelect.setAttribute('id','plselect');
+    var index = 0;
+    document.querySelector('#dp2').innerHTML =  '';
+    var opt = document.createElement('option');
+    opt.innerHTML = 'Choose a player';
+    mySelect.appendChild(opt);
+    for(element of dropliste) {
+        opt = document.createElement('option');
+        opt.value = element;
+        opt.innerHTML = element;
+        // in case "of" for ... of dropliste
+        //opt.innerHTML = dropliste[element]; //in case "in"... of
+        mySelect.appendChild(opt);
+        index++;
+    }
+    document.querySelector('#dp2').append(mySelect);
+    //----------ON CHANGE-----------------------
+    // mySelect.addEventListener('change', function() {
+    //     changePlayer(this.value);
+    // })
+    //-----------------OU------------------
+    mySelect.onchange = function() {
+        changePlayer(this.value)
+    }
+    
+}
+
+
+function changePlayer(plname) {
+    if(plname != "Choose a player") {
+        alert(`Player name is : ${plname}`);
+    }
+    
+
+}
+
+
+
