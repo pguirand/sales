@@ -82,19 +82,19 @@ DATABASES = {
         # 'NAME': BASE_DIR / 'db.sqlite3',
 
 
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'd3fcmk444urqi0',
-        # 'HOST': 'ec2-3-225-213-67.compute-1.amazonaws.com',
-        # 'PORT': 5432,
-        # 'USER': 'irzcmshqtqgmkq',
-        # 'PASSWORD': '79e07a8ae58ea17effeb37a04268c93eaf88ac3c9ddd38f0cd9bd626a0739247'
-
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'de71a1dh6e1df1',
-        'HOST': 'ec2-3-213-41-172.compute-1.amazonaws.com',
+        'NAME': 'd3fcmk444urqi0',
+        'HOST': 'ec2-3-225-213-67.compute-1.amazonaws.com',
         'PORT': 5432,
-        'USER': 'pyicxcbfwtfbuj',
-        'PASSWORD': '71f26851805d598b3e1b1b2753296395e9862827946c1cb50cd4ee7439a830cd'
+        'USER': 'irzcmshqtqgmkq',
+        'PASSWORD': '79e07a8ae58ea17effeb37a04268c93eaf88ac3c9ddd38f0cd9bd626a0739247'
+
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'de71a1dh6e1df1',
+        # 'HOST': 'ec2-3-213-41-172.compute-1.amazonaws.com',
+        # 'PORT': 5432,
+        # 'USER': 'pyicxcbfwtfbuj',
+        # 'PASSWORD': '71f26851805d598b3e1b1b2753296395e9862827946c1cb50cd4ee7439a830cd'
     }
 }
 
